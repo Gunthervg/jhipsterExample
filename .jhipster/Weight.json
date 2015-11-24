@@ -1,0 +1,32 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "timestamp",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "weight",
+      "fieldType": "Double",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20151124171233",
+  "dto": "no",
+  "pagination": "infinite-scroll"
+}

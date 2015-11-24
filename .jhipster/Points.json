@@ -1,0 +1,44 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "date",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "exercise",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "meals",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "alcohol",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "notes",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20151124171007",
+  "dto": "no",
+  "pagination": "infinite-scroll"
+}

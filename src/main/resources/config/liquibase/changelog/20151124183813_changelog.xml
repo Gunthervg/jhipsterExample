@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Gunther (generated)" id="1448386697521-1">
+        <addColumn tableName="jhi_user">
+            <column name="preferences_id" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gunther (generated)" id="1448386697521-2">
+        <addForeignKeyConstraint baseColumnNames="preferences_id"
+                                 baseTableName="jhi_user"
+                                 constraintName="FK_cipj0mxag1inl36996yiogsd5"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 referencedColumnNames="id"
+                                 referencedTableName="preferences"/>
+    </changeSet>
+    <changeSet author="Gunther (generated)" id="1448386697521-3">
+        <dropSequence sequenceName="bloodpressure_id_seq"/>
+    </changeSet>
+    <changeSet author="Gunther (generated)" id="1448386697521-4">
+        <dropSequence sequenceName="jhi_persistent_audit_event_event_id_seq"/>
+    </changeSet>
+    <changeSet author="Gunther (generated)" id="1448386697521-5">
+        <dropSequence sequenceName="jhi_user_id_seq"/>
+    </changeSet>
+    <changeSet author="Gunther (generated)" id="1448386697521-6">
+        <dropSequence sequenceName="points_id_seq"/>
+    </changeSet>
+    <changeSet author="Gunther (generated)" id="1448386697521-7">
+        <dropSequence sequenceName="preferences_id_seq"/>
+    </changeSet>
+    <changeSet author="Gunther (generated)" id="1448386697521-8">
+        <dropSequence sequenceName="weight_id_seq"/>
+    </changeSet>
+</databaseChangeLog>

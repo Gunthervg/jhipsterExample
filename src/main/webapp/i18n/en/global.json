@@ -6,6 +6,10 @@
             "home": "Home",
             "entities": {
                 "main": "Entities",
+                "points": "Points",
+                "weight": "Weight",
+                "bloodpressure": "Bloodpressure",
+                "preferences": "Preferences",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

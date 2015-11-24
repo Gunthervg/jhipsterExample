@@ -1,0 +1,70 @@
+<div>
+    <h2 translate="21pointsApp.bloodpressure.home.title">Bloodpressures</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="bloodpressure.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span
+                        translate="21pointsApp.bloodpressure.home.createLabel">Create a new Bloodpressure</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery"
+                               placeholder="query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span>
+                        <span>Search a Bloodpressure</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="global.field.id">ID</th>
+                <th translate="21pointsApp.bloodpressure.timestamp">Timestamp</th>
+                <th translate="21pointsApp.bloodpressure.systolic">Systolic</th>
+                <th translate="21pointsApp.bloodpressure.diastolic">Diastolic</th>
+                <th translate="21pointsApp.bloodpressure.user">user</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+            <tr ng-repeat="bloodpressure in bloodpressures track by bloodpressure.id">
+                <td><a ui-sref="bloodpressure.detail({id:bloodpressure.id})">{{bloodpressure.id}}</a></td>
+                <td>{{bloodpressure.timestamp | date:'mediumDate'}}</td>
+                <td>{{bloodpressure.systolic}}</td>
+                <td>{{bloodpressure.diastolic}}</td>
+                <td>
+                    {{bloodpressure.user.id}}
+                </td>
+                <td>
+                    <button type="submit"
+                            ui-sref="bloodpressure.detail({id:bloodpressure.id})"
+                            class="btn btn-info btn-sm">
+                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                    </button>
+                    <button type="submit"
+                            ui-sref="bloodpressure.edit({id:bloodpressure.id})"
+                            class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span
+                            translate="entity.action.edit"> Edit</span>
+                    </button>
+                    <button type="submit"
+                            ui-sref="bloodpressure.delete({id:bloodpressure.id})"
+                            class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span
+                            translate="entity.action.delete"> Delete</span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
